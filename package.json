@@ -1,0 +1,74 @@
+{
+  "name": "osmose-request",
+  "description": "Request the Osmose API",
+  "version": "0.1.0",
+  "homepage": "https://github.com/GuillaumeAmat/osmose-request/",
+  "repository": "https://github.com/GuillaumeAmat/osmose-request/",
+  "bugs": "https://github.com/GuillaumeAmat/osmose-request/issues",
+  "author": "Guillaume Amat <guillaume@amat.io>",
+  "license": "MIT",
+  "keywords": [
+    "osm",
+    "openstreetmap",
+    "osmose",
+    "osmose-qa",
+    "qa",
+    "request",
+    "api"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "webpack -w --progress",
+    "build": "cross-env NODE_ENV=production webpack --progress",
+    "precommit": "lint-staged",
+    "test": "jest --env=jsdom",
+    "test-watch": "npm test -- --watch",
+    "test-ci": "npm test -- --ci",
+    "test-coverage": "npm run test-ci -- --coverage",
+    "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,jsx,json,css,less}'",
+    "lint": "eslint 'src/**/*.{js,jsx}'"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest.setup.js"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ],
+    "src/**/*.{js,jsx,json}": [
+      "eslint",
+      "git add"
+    ],
+    "src/**/*.{js,jsx}": [
+      "jest --ci",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "eslint": "^4.8.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.7.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.2.3",
+    "prettier": "^1.7.4",
+    "webpack": "^3.6.0"
+  }
+}
