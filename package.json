@@ -40,10 +40,6 @@
   },
   "lint-staged": {
     "src/**/*.{js,json}": [
-      "prettier --single-quote --write",
-      "git add"
-    ],
-    "src/**/*.{js,json}": [
       "eslint",
       "git add"
     ],
@@ -58,6 +54,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
+    "coveralls": "^3.0.0",
     "cross-env": "^5.1.1",
     "eslint": "^4.8.0",
     "eslint-config-prettier": "^2.6.0",
