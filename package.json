@@ -30,11 +30,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
+      "src/**/*.js",
       "!<rootDir>/node_modules/"
-    ],
-    "setupFiles": [
-      "<rootDir>/jest.setup.js"
     ]
   },
   "prettier": {
@@ -42,15 +39,15 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
+    "src/**/*.{js,json}": [
       "prettier --single-quote --write",
       "git add"
     ],
-    "src/**/*.{js,jsx,json}": [
+    "src/**/*.{js,json}": [
       "eslint",
       "git add"
     ],
-    "src/**/*.{js,jsx}": [
+    "src/**/*.js": [
       "jest --ci",
       "git add"
     ]
@@ -65,6 +62,7 @@
     "eslint": "^4.8.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.3.2",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^4.2.3",
