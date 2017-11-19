@@ -5,7 +5,7 @@
 
 # Osmose Request
 
-Request the Osmose API
+Request the [Osmose](http://wiki.openstreetmap.org/wiki/Osmose) API
 
 
 **This project is heavy development phase, don't use it in production until the first 1.0.0 stable version.**
