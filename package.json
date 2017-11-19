@@ -32,6 +32,10 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!<rootDir>/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/requests.js",
+      "<rootDir>/node_modules/"
     ]
   },
   "prettier": {
@@ -66,5 +70,8 @@
     "lint-staged": "^4.2.3",
     "prettier": "^1.7.4",
     "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^2.0.3"
   }
 }
