@@ -1,5 +1,10 @@
 import defaultOptions from './defaultOptions.json';
-import { fetchErrorsRequest, fetchErrorRequest } from './requests';
+import {
+  fetchErrorsRequest,
+  fetchErrorRequest,
+  fetchSupportedCountriesRequest,
+  fetchItemsRequest
+} from './requests';
 
 /**
  * Osmose API request handler
@@ -26,11 +31,11 @@ export default class OsmoseRequest {
 
   /**
    * Return an errors list
-   * @param  {Object} params
-   * @return {Object}
+   * @param {Object} params
+   * @return {Array}
    */
   async fetchErrors(params) {
-    const list = await fetchErrorsRequest(this._options.endpoint, params);
+    const response = await fetchErrorsRequest(this._options.endpoint, params);
 
     /*
       Transform the raw list:
@@ -58,8 +63,8 @@ export default class OsmoseRequest {
         }
       ]
      */
-    return list.errors.map(error =>
-      list.description.reduce((result, key, index) => {
+    return response.errors.map(error =>
+      response.description.reduce((result, key, index) => {
         result[key] = error[index];
         return result;
       }, {})
@@ -68,10 +73,46 @@ export default class OsmoseRequest {
 
   /**
    * Return all the informations about a specific error
-   * @param  {String} errorId The error ID
+   * @param {String} errorId The error ID
    * @return {Object}
    */
   async fetchError(errorId) {
     return await fetchErrorRequest(this._options.endpoint, errorId);
+  }
+
+  /**
+   * Return the list of the countries supported in the Osmose instance
+   * @return {Array}
+   */
+  async fetchSupportedCountries() {
+    const response = await fetchSupportedCountriesRequest(
+      this._options.endpoint
+    );
+    return response.countries;
+  }
+
+  /**
+   * Return the list of the items configured in the Osmose instance and their translated name.
+   * It's possible to filter the returned translations to one language.
+   * @param {String} isoCountryCode Eg: fr, en, ru
+   * @return {Array}
+   */
+  async fetchItems(isoCountryCode) {
+    const response = await fetchItemsRequest(
+      this._options.endpoint
+    );
+
+    if (isoCountryCode) {
+      return response.items.map(item => ({
+        id: item[0],
+        name: item[1][isoCountryCode]
+      }));
+    }
+    else {
+      return response.items.map(item => ({
+        id: item[0],
+        name: item[1]
+      }));
+    }
   }
 }
