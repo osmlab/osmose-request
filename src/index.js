@@ -94,21 +94,18 @@ export default class OsmoseRequest {
   /**
    * Return the list of the items configured in the Osmose instance and their translated name.
    * It's possible to filter the returned translations to one language.
-   * @param {String} isoCountryCode Eg: fr, en, ru
+   * @param {String} [isoCountryCode] Eg: fr, en, ru
    * @return {Array}
    */
   async fetchItems(isoCountryCode) {
-    const response = await fetchItemsRequest(
-      this._options.endpoint
-    );
+    const response = await fetchItemsRequest(this._options.endpoint);
 
     if (isoCountryCode) {
       return response.items.map(item => ({
         id: item[0],
         name: item[1][isoCountryCode]
       }));
-    }
-    else {
+    } else {
       return response.items.map(item => ({
         id: item[0],
         name: item[1]
