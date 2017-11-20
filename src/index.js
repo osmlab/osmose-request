@@ -97,9 +97,7 @@ export default class OsmoseRequest {
    * @return {Array}
    */
   async fetchItemCategories() {
-    const response = await fetchItemCategoriesRequest(
-      this._options.endpoint
-    );
+    const response = await fetchItemCategoriesRequest(this._options.endpoint);
 
     return response.categories.map(category => ({
       id: category.categ,
@@ -109,7 +107,7 @@ export default class OsmoseRequest {
         name: item.menu,
         tags: item.tags,
         count: item.number,
-        levels: item.levels,
+        levels: item.levels
       }))
     }));
   }
