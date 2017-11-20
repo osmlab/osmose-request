@@ -65,6 +65,85 @@ Array [
 ]
 `;
 
+exports[`Get Osmose item categories Should return the list of the item categories 1`] = `
+Array [
+  Object {
+    "id": 10,
+    "items": Array [
+      Object {
+        "count": Array [
+          624,
+          418453,
+          901445,
+        ],
+        "id": 0,
+        "levels": Array [
+          1,
+          2,
+          3,
+        ],
+        "name": "bâtiments se recouvrant",
+        "tags": Array [
+          "building",
+          "fix:chair",
+          "geom",
+        ],
+      },
+      Object {
+        "count": null,
+        "id": 1,
+        "levels": Array [
+          3,
+        ],
+        "name": "Bâtiment segmenté",
+        "tags": Array [
+          "building",
+          "fix:chair",
+          "fix:imagery",
+          "geom",
+        ],
+      },
+    ],
+    "name": "Structurel",
+  },
+  Object {
+    "id": 20,
+    "items": Array [
+      Object {
+        "count": Array [
+          21346,
+        ],
+        "id": 2010,
+        "levels": Array [
+          1,
+        ],
+        "name": "mauvais giratoire",
+        "tags": Array [
+          "fix:imagery",
+          "highway",
+          "roundabout",
+        ],
+      },
+      Object {
+        "count": Array [
+          177003,
+        ],
+        "id": 2020,
+        "levels": Array [
+          3,
+        ],
+        "name": "altitude",
+        "tags": Array [
+          "fix:survey",
+          "tag",
+        ],
+      },
+    ],
+    "name": "Attributs manquants",
+  },
+]
+`;
+
 exports[`Get Osmose items Should return the list of the items and one translation of the name 1`] = `
 Array [
   Object {

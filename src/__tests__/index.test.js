@@ -5,6 +5,7 @@ import {
   fetchErrorsRequest,
   fetchErrorRequest,
   fetchSupportedCountriesRequest,
+  fetchItemCategoriesRequest,
   fetchItemsRequest
 } from '../requests';
 import OsmoseRequest from '../index';
@@ -57,6 +58,18 @@ describe('Get supported countries', () => {
     expect(fetchSupportedCountriesRequest).toBeCalledWith(
       defaultOptions.endpoint
     );
+  });
+});
+
+describe('Get Osmose item categories', () => {
+  const osmose = new OsmoseRequest();
+
+  it('Should return the list of the item categories', async () => {
+    const categories = await osmose.fetchItemCategories();
+
+    expect(categories).toBeDefined();
+    expect(categories).toMatchSnapshot();
+    expect(fetchItemCategoriesRequest).toBeCalledWith(defaultOptions.endpoint);
   });
 });
 

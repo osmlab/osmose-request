@@ -58,6 +58,23 @@ export const fetchSupportedCountriesRequest = endpoint => {
  * @param  {String} endpoint The API endpoint
  * @return {Object}
  */
+export const fetchItemCategoriesRequest = endpoint => {
+  const uri = `${endpoint}/meta/categories`;
+
+  return fetch(uri)
+    .then(response => response.json())
+    .then(response => {
+      if (!response || !response.categories) {
+        throw `The data received from the Osmose API is malformed (${uri})`;
+      }
+      return response;
+    });
+};
+
+/**
+ * @param  {String} endpoint The API endpoint
+ * @return {Object}
+ */
 export const fetchItemsRequest = endpoint => {
   const uri = `${endpoint}/meta/items`;
 

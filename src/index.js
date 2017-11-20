@@ -3,6 +3,7 @@ import {
   fetchErrorsRequest,
   fetchErrorRequest,
   fetchSupportedCountriesRequest,
+  fetchItemCategoriesRequest,
   fetchItemsRequest
 } from './requests';
 
@@ -89,6 +90,28 @@ export default class OsmoseRequest {
       this._options.endpoint
     );
     return response.countries;
+  }
+
+  /**
+   * Return the list of the item categories with some details
+   * @return {Array}
+   */
+  async fetchItemCategories() {
+    const response = await fetchItemCategoriesRequest(
+      this._options.endpoint
+    );
+
+    return response.categories.map(category => ({
+      id: category.categ,
+      name: category.menu,
+      items: category.item.map(item => ({
+        id: item.item,
+        name: item.menu,
+        tags: item.tags,
+        count: item.number,
+        levels: item.levels,
+      }))
+    }));
   }
 
   /**
