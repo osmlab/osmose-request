@@ -11,6 +11,13 @@ Request the [Osmose](http://wiki.openstreetmap.org/wiki/Osmose) API
 **This project is heavy development phase, don't use it in production until the first 1.0.0 stable version.**
 
 
+## Installation
+
+```
+$ npm install osmose-request
+```
+
+
 ## Usage
 
 ``` javascript
@@ -21,6 +28,7 @@ const osmose = new OsmoseRequest();
 osmose.fetchErrors({ item: 8120 })
   .then(result => console.log(result));
 ```
+
 
 ### Options
 
