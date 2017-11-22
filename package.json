@@ -1,7 +1,7 @@
 {
   "name": "osmose-request",
-  "description": "Request the Osmose API",
-  "version": "0.1.0",
+  "description": "Request the Osmose API from Javascript, with promises :)",
+  "version": "1.0.0",
   "homepage": "https://github.com/GuillaumeAmat/osmose-request/",
   "repository": "https://github.com/GuillaumeAmat/osmose-request/",
   "bugs": "https://github.com/GuillaumeAmat/osmose-request/issues",
@@ -16,7 +16,7 @@
     "request",
     "api"
   ],
-  "main": "src/index.js",
+  "main": "dist/OsmoseRequest.js",
   "scripts": {
     "watch": "webpack -w --progress",
     "build": "cross-env NODE_ENV=production webpack --progress",
@@ -25,16 +25,17 @@
     "test-watch": "npm test -- --watch",
     "test-ci": "npm test -- --ci",
     "test-coverage": "npm run test-ci -- --coverage",
-    "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,jsx,json,css,less}'",
-    "lint": "eslint 'src/**/*.{js,jsx}'"
+    "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
+    "lint": "eslint 'src/**/*.{js,json}'"
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
+      "src/**/*.js",
       "!<rootDir>/node_modules/"
     ],
-    "setupFiles": [
-      "<rootDir>/jest.setup.js"
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/requests.js",
+      "<rootDir>/node_modules/"
     ]
   },
   "prettier": {
@@ -42,15 +43,12 @@
     "singleQuote": true
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
+    "src/**/*.{js,json}": [
       "prettier --single-quote --write",
-      "git add"
-    ],
-    "src/**/*.{js,jsx,json}": [
       "eslint",
       "git add"
     ],
-    "src/**/*.{js,jsx}": [
+    "src/**/*.js": [
       "jest --ci",
       "git add"
     ]
@@ -61,14 +59,21 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-stage-0": "^6.24.1",
+    "coveralls": "^3.0.0",
     "cross-env": "^5.1.1",
     "eslint": "^4.8.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.3.2",
+    "eslint-plugin-json": "^1.2.0",
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^4.2.3",
     "prettier": "^1.7.4",
     "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cross-fetch": "^1.1.1"
   }
 }

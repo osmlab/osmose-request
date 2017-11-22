@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get Osmose errors Should return an Osmose error 1`] = `
+Object {
+  "b_date": "2017-11-18",
+  "elems": Array [],
+  "elems_id": "",
+  "error_id": 14412894302,
+  "item": 8120,
+  "lat": "47.2069075",
+  "lon": "-1.5145110",
+  "maxlat": 47.2089075,
+  "maxlon": -1.512511,
+  "minlat": 47.2049075,
+  "minlon": -1.516511,
+  "new_elems": Array [
+    Object {
+      "add": Array [
+        Object {
+          "k": "amenity",
+          "v": "recycling",
+        },
+        Object {
+          "k": "recycling:glass_bottles",
+          "v": "yes",
+        },
+        Object {
+          "k": "recycling_type",
+          "v": "container",
+        },
+        Object {
+          "k": "ref:FR:NM",
+          "v": "VE0791",
+        },
+        Object {
+          "k": "source",
+          "v": "Nantes Métropole - 07/2016",
+        },
+      ],
+      "del": Array [],
+      "mod": Array [],
+      "num": 0,
+    },
+  ],
+  "subtitle": "verre, Rue de la Loire",
+  "title": "Recyclage de verre de NM non intégré",
+  "url_help": "http://wiki.openstreetmap.org/wiki/FR:Osmose/erreurs",
+}
+`;
+
+exports[`Get Osmose errors Should return errors related to an Osmose item 1`] = `
+Array [
+  Object {
+    "error_id": "14412894302",
+    "item": "8120",
+    "lat": "47.2069075",
+    "lon": "-1.5145110",
+  },
+  Object {
+    "error_id": "14412894299",
+    "item": "8120",
+    "lat": "47.1867600",
+    "lon": "-1.5580475",
+  },
+]
+`;
+
+exports[`Get Osmose item categories Should return the list of the item categories 1`] = `
+Array [
+  Object {
+    "id": 10,
+    "items": Array [
+      Object {
+        "count": Array [
+          624,
+          418453,
+          901445,
+        ],
+        "id": 0,
+        "levels": Array [
+          1,
+          2,
+          3,
+        ],
+        "name": "bâtiments se recouvrant",
+        "tags": Array [
+          "building",
+          "fix:chair",
+          "geom",
+        ],
+      },
+      Object {
+        "count": null,
+        "id": 1,
+        "levels": Array [
+          3,
+        ],
+        "name": "Bâtiment segmenté",
+        "tags": Array [
+          "building",
+          "fix:chair",
+          "fix:imagery",
+          "geom",
+        ],
+      },
+    ],
+    "name": "Structurel",
+  },
+  Object {
+    "id": 20,
+    "items": Array [
+      Object {
+        "count": Array [
+          21346,
+        ],
+        "id": 2010,
+        "levels": Array [
+          1,
+        ],
+        "name": "mauvais giratoire",
+        "tags": Array [
+          "fix:imagery",
+          "highway",
+          "roundabout",
+        ],
+      },
+      Object {
+        "count": Array [
+          177003,
+        ],
+        "id": 2020,
+        "levels": Array [
+          3,
+        ],
+        "name": "altitude",
+        "tags": Array [
+          "fix:survey",
+          "tag",
+        ],
+      },
+    ],
+    "name": "Attributs manquants",
+  },
+]
+`;
+
+exports[`Get Osmose items Should return the list of the items and one translation of the name 1`] = `
+Array [
+  Object {
+    "id": 0,
+    "name": "bâtiments se recouvrant",
+  },
+  Object {
+    "id": 1010,
+    "name": "nœud répété",
+  },
+]
+`;
+
+exports[`Get Osmose items Should return the list of the items and their translated name 1`] = `
+Array [
+  Object {
+    "id": 0,
+    "name": Object {
+      "ca": "edificis superposats",
+      "cs": "překrývající se budovy",
+      "de": "überlappende Gebäude",
+      "el": "αλληλεπικαλυπτόμενο κτήριο",
+      "en": "overlapping building",
+      "es": "superposición de edificios",
+      "fi": "päällekkäinen rakennus",
+      "fr": "bâtiments se recouvrant",
+      "hu": "átfedő épület",
+      "it": "edifici sovrapposti",
+      "ja": "建物の交差",
+      "lt": "persidengiantys pastatai",
+      "nl": "overlappende gebouw",
+      "pl": "nakładające się budynki",
+      "pt": "sobreposição de edifícios",
+      "ro": "clădire suprapusă",
+      "ru": "пересекающиеся здания",
+      "sw": "majengo kufunika",
+      "uk": "перетин будівель",
+      "zh_CN": "建筑重叠",
+      "zh_TW": "建物重疊",
+    },
+  },
+  Object {
+    "id": 1010,
+    "name": Object {
+      "ca": "no duplicat",
+      "cs": "duplikované uzly",
+      "de": "doppelter Knoten",
+      "el": "διπλός κόμβος",
+      "en": "duplicated node",
+      "es": "nodo duplicado",
+      "fr": "nœud répété",
+      "hu": "duplikált pont",
+      "it": "nodo duplicato",
+      "ja": "重複したノード",
+      "lt": "taško dublikatas",
+      "nl": "dubbele knooppunt",
+      "pl": "powielony węzeł",
+      "pt": "nó duplicado",
+      "ro": "nod duplicat",
+      "ru": "дублированная точка",
+      "sw": "unaorudiwa nodi",
+      "uk": "дубльовані точки",
+      "zh_CN": "重复节点",
+      "zh_TW": "重覆的 node",
+    },
+  },
+]
+`;
+
+exports[`Get supported countries Should return the list of supported countries 1`] = `
+Array [
+  "afghanistan",
+  "albania",
+  "algeria",
+  "andorra",
+]
+`;
