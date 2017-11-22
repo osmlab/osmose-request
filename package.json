@@ -16,7 +16,7 @@
     "request",
     "api"
   ],
-  "main": "src/index.js",
+  "main": "dist/OsmoseRequest.js",
   "scripts": {
     "watch": "webpack -w --progress",
     "build": "cross-env NODE_ENV=production webpack --progress",
@@ -73,6 +73,7 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "cross-fetch": "^1.1.1"
   }
 }

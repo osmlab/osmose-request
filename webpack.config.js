@@ -21,6 +21,7 @@ module.exports = {
     OsmoseRequest: path.join(__dirname, 'src/index.js')
   },
   output: {
+    library: 'OsmoseRequest',
     libraryTarget: 'umd',
     filename: '[name].js',
     path: path.join(__dirname, 'dist')

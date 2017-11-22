@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import defaultOptions from './defaultOptions.json';
 import {
   fetchErrorsRequest,
