@@ -1,4 +1,5 @@
-import 'whatwg-fetch';
+import fetch from 'cross-fetch';
+import defaultOptions from './defaultOptions.json';
 import { buildQueryString } from './helpers';
 
 /**
@@ -6,10 +7,11 @@ import { buildQueryString } from './helpers';
  * @param  {Object} params
  * @return {Object}
  */
-export const fetchErrorsRequest = (endpoint, params) => {
+export const fetchErrorsRequest = (endpoint, language, params) => {
   const uri = `${endpoint}/errors${buildQueryString(params)}`;
+  const headers = { 'Accept-language': language || defaultOptions.language };
 
-  return fetch(uri)
+  return fetch(uri, { headers })
     .then(response => response.json())
     .then(response => {
       if (!response || !response.description || !response.errors) {
@@ -24,10 +26,11 @@ export const fetchErrorsRequest = (endpoint, params) => {
  * @param  {String} errorId The ID of the error to fetch
  * @return {Object}
  */
-export const fetchErrorRequest = (endpoint, errorId) => {
+export const fetchErrorRequest = (endpoint, language, errorId) => {
   const uri = `${endpoint}/error/${errorId}`;
+  const headers = { 'Accept-language': language || defaultOptions.language };
 
-  return fetch(uri)
+  return fetch(uri, { headers })
     .then(response => response.json())
     .then(response => {
       if (!response || !response.title || !response.lat || !response.lon) {
@@ -41,10 +44,11 @@ export const fetchErrorRequest = (endpoint, errorId) => {
  * @param  {String} endpoint The API endpoint
  * @return {Object}
  */
-export const fetchSupportedCountriesRequest = endpoint => {
+export const fetchSupportedCountriesRequest = (endpoint, language) => {
   const uri = `${endpoint}/meta/countries`;
+  const headers = { 'Accept-language': language || defaultOptions.language };
 
-  return fetch(uri)
+  return fetch(uri, { headers })
     .then(response => response.json())
     .then(response => {
       if (!response || !response.countries) {
@@ -58,10 +62,11 @@ export const fetchSupportedCountriesRequest = endpoint => {
  * @param  {String} endpoint The API endpoint
  * @return {Object}
  */
-export const fetchItemCategoriesRequest = endpoint => {
+export const fetchItemCategoriesRequest = (endpoint, language) => {
   const uri = `${endpoint}/meta/categories`;
+  const headers = { 'Accept-language': language || defaultOptions.language };
 
-  return fetch(uri)
+  return fetch(uri, { headers })
     .then(response => response.json())
     .then(response => {
       if (!response || !response.categories) {
@@ -75,10 +80,11 @@ export const fetchItemCategoriesRequest = endpoint => {
  * @param  {String} endpoint The API endpoint
  * @return {Object}
  */
-export const fetchItemsRequest = endpoint => {
+export const fetchItemsRequest = (endpoint, language) => {
   const uri = `${endpoint}/meta/items`;
+  const headers = { 'Accept-language': language || defaultOptions.language };
 
-  return fetch(uri)
+  return fetch(uri, { headers })
     .then(response => response.json())
     .then(response => {
       if (!response || !response.items) {

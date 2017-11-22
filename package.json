@@ -73,6 +73,6 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "whatwg-fetch": "^2.0.3"
+    "cross-fetch": "^1.1.1"
   }
 }
