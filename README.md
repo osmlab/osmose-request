@@ -18,7 +18,7 @@ $ npm install osmose-request
 ## Usage
 
 ``` javascript
-import OsmoseRequest from './src';
+import OsmoseRequest from 'osmose-request';
 
 const osmose = new OsmoseRequest();
 
