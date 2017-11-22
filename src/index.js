@@ -23,6 +23,14 @@ export default class OsmoseRequest {
   }
 
   /**
+   * Return the language to use for the Accept-language header of the requests
+   * @return {String} Language code (eg: fr, en, ru)
+   */
+  get language() {
+    return this._options.language;
+  }
+
+  /**
    * Return the API endpoint to use for the requests
    * @return {String} URL of the API endpoint
    */
@@ -36,7 +44,11 @@ export default class OsmoseRequest {
    * @return {Array}
    */
   async fetchErrors(params) {
-    const response = await fetchErrorsRequest(this._options.endpoint, params);
+    const response = await fetchErrorsRequest(
+      this._options.endpoint,
+      this._options.language,
+      params
+    );
 
     /*
       Transform the raw list:
@@ -78,7 +90,11 @@ export default class OsmoseRequest {
    * @return {Object}
    */
   async fetchError(errorId) {
-    return await fetchErrorRequest(this._options.endpoint, errorId);
+    return await fetchErrorRequest(
+      this._options.endpoint,
+      this._options.language,
+      errorId
+    );
   }
 
   /**
@@ -87,7 +103,8 @@ export default class OsmoseRequest {
    */
   async fetchSupportedCountries() {
     const response = await fetchSupportedCountriesRequest(
-      this._options.endpoint
+      this._options.endpoint,
+      this._options.language
     );
     return response.countries;
   }
@@ -97,7 +114,10 @@ export default class OsmoseRequest {
    * @return {Array}
    */
   async fetchItemCategories() {
-    const response = await fetchItemCategoriesRequest(this._options.endpoint);
+    const response = await fetchItemCategoriesRequest(
+      this._options.endpoint,
+      this._options.language
+    );
 
     return response.categories.map(category => ({
       id: category.categ,
@@ -119,7 +139,10 @@ export default class OsmoseRequest {
    * @return {Array}
    */
   async fetchItems(isoCountryCode) {
-    const response = await fetchItemsRequest(this._options.endpoint);
+    const response = await fetchItemsRequest(
+      this._options.endpoint,
+      this._options.language
+    );
 
     if (isoCountryCode) {
       return response.items.map(item => ({

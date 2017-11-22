@@ -21,10 +21,22 @@ describe('Instanciation', () => {
     const osmose = new OsmoseRequest({ endpoint: customEndpoint });
     expect(osmose.endpoint).toBe(customEndpoint);
   });
+
+  it('Should return a default language', () => {
+    const osmose = new OsmoseRequest();
+    expect(osmose.language).toBe(defaultOptions.language);
+  });
+
+  it('Should return a custom language', () => {
+    const customLanguage = 'fr';
+    const osmose = new OsmoseRequest({ language: customLanguage });
+    expect(osmose.language).toBe(customLanguage);
+  });
 });
 
 describe('Get Osmose errors', () => {
-  const osmose = new OsmoseRequest();
+  const language = 'fr';
+  const osmose = new OsmoseRequest({ language });
   let errors = [];
 
   it('Should return errors related to an Osmose item', async () => {
@@ -35,7 +47,11 @@ describe('Get Osmose errors', () => {
 
     expect(errors).toBeDefined();
     expect(errors).toMatchSnapshot();
-    expect(fetchErrorsRequest).toBeCalledWith(defaultOptions.endpoint, params);
+    expect(fetchErrorsRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      language,
+      params
+    );
   });
 
   it('Should return an Osmose error', async () => {
@@ -43,7 +59,11 @@ describe('Get Osmose errors', () => {
     const error = await osmose.fetchError(errorId);
     expect(error).toBeDefined();
     expect(error).toMatchSnapshot();
-    expect(fetchErrorRequest).toBeCalledWith(defaultOptions.endpoint, errorId);
+    expect(fetchErrorRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      language,
+      errorId
+    );
   });
 });
 
@@ -56,7 +76,8 @@ describe('Get supported countries', () => {
     expect(countries).toBeDefined();
     expect(countries).toMatchSnapshot();
     expect(fetchSupportedCountriesRequest).toBeCalledWith(
-      defaultOptions.endpoint
+      defaultOptions.endpoint,
+      defaultOptions.language
     );
   });
 });
@@ -69,7 +90,10 @@ describe('Get Osmose item categories', () => {
 
     expect(categories).toBeDefined();
     expect(categories).toMatchSnapshot();
-    expect(fetchItemCategoriesRequest).toBeCalledWith(defaultOptions.endpoint);
+    expect(fetchItemCategoriesRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      defaultOptions.language
+    );
   });
 });
 
@@ -81,7 +105,10 @@ describe('Get Osmose items', () => {
 
     expect(items).toBeDefined();
     expect(items).toMatchSnapshot();
-    expect(fetchItemsRequest).toBeCalledWith(defaultOptions.endpoint);
+    expect(fetchItemsRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      defaultOptions.language
+    );
   });
 
   it('Should return the list of the items and one translation of the name', async () => {
@@ -89,6 +116,9 @@ describe('Get Osmose items', () => {
 
     expect(items).toBeDefined();
     expect(items).toMatchSnapshot();
-    expect(fetchItemsRequest).toBeCalledWith(defaultOptions.endpoint);
+    expect(fetchItemsRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      defaultOptions.language
+    );
   });
 });
