@@ -4,6 +4,8 @@ import defaultOptions from '../defaultOptions.json';
 import {
   fetchErrorsRequest,
   fetchErrorRequest,
+  closeErrorRequest,
+  falseErrorRequest,
   fetchSupportedCountriesRequest,
   fetchItemCategoriesRequest,
   fetchItemsRequest
@@ -64,6 +66,35 @@ describe('Get Osmose errors', () => {
       language,
       errorId
     );
+  });
+});
+
+describe('Update Osmose errors', async () => {
+  const language = 'fr';
+  const osmose = new OsmoseRequest({ language });
+  let errors = await osmose.fetchErrors({ item: 8120 });
+
+  it('Should close error related to an Osmose item', async () => {
+    const errorId = errors[0].error_id;
+    const result = await osmose.closeError(errorId);
+
+    expect(result).toBeDefined();
+    expect(result).toBeTrue();
+    expect(closeErrorRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      language,
+      errorId
+    );
+  });
+
+  it('Should mark as false positive error related to an Osmose item', async () => {
+    const errorId = errors[1].error_id;
+    const result = await osmose.falseError(errorId);
+
+    expect(result).toBeDefined();
+    expect(result).toBeTrue();
+    defaultOptions.endpoint,
+      expect(falseErrorRequest).toBeCalledWith(language, errorId);
   });
 });
 
