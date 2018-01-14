@@ -18,7 +18,7 @@ $ npm install osmose-request
 ## Usage
 
 ``` javascript
-import OsmoseRequest from './src';
+import OsmoseRequest from 'osmose-request';
 
 const osmose = new OsmoseRequest();
 
@@ -70,6 +70,28 @@ Returns the informations about a specific error.
 // With 123456 as an error ID
 osmose.fetchError(123456)
   .then(result => console.log(result));
+```
+
+
+#### closeError
+
+Closes the given error on Osmose server.
+
+``` javascript
+// With 123456 as an error ID
+osmose.closeError(123456)
+  .then(result => console.log(result)); // true if taken into account
+```
+
+
+#### falseError
+
+Sets this error as a false positive on Osmose server.
+
+``` javascript
+// With 123456 as an error ID
+osmose.falseError(123456)
+  .then(result => console.log(result)); // true if taken into account
 ```
 
 
