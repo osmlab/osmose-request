@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.1.0
+
+* Add a method to close an Osmose error.
+* Add a method to declare an Osmose error falsy.
+
 ## 1.0.0
 
 First stable release.
