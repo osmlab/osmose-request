@@ -49,7 +49,7 @@
       "git add"
     ],
     "src/**/*.js": [
-      "jest --ci",
+      "jest --ci --findRelatedTests",
       "git add"
     ]
   },
