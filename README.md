@@ -80,7 +80,7 @@ Closes the given error on Osmose server.
 ``` javascript
 // With 123456 as an error ID
 osmose.closeError(123456)
-  .then(ok => console.log(ok)); // true if taken into account
+  .then(result => console.log(result)); // true if taken into account
 ```
 
 
@@ -91,7 +91,7 @@ Sets this error as a false positive on Osmose server.
 ``` javascript
 // With 123456 as an error ID
 osmose.falseError(123456)
-  .then(ok => console.log(ok)); // true if taken into account
+  .then(result => console.log(result)); // true if taken into account
 ```
 
 
