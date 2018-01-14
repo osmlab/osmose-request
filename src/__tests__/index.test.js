@@ -79,7 +79,7 @@ describe('Update Osmose errors', async () => {
     const result = await osmose.closeError(errorId);
 
     expect(result).toBeDefined();
-    expect(result).toBeTrue();
+    expect(result).toBe(true);
     expect(closeErrorRequest).toBeCalledWith(
       defaultOptions.endpoint,
       language,
@@ -92,7 +92,7 @@ describe('Update Osmose errors', async () => {
     const result = await osmose.falseError(errorId);
 
     expect(result).toBeDefined();
-    expect(result).toBeTrue();
+    expect(result).toBe(true);
     defaultOptions.endpoint,
       expect(falseErrorRequest).toBeCalledWith(language, errorId);
   });
