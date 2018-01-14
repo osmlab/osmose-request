@@ -69,12 +69,12 @@ describe('Get Osmose errors', () => {
   });
 });
 
-describe('Update Osmose errors', async () => {
+describe('Update Osmose errors', () => {
   const language = 'fr';
   const osmose = new OsmoseRequest({ language });
-  const errors = await osmose.fetchErrors({ item: 8120 });
 
   it('Should close error related to an Osmose item', async () => {
+    const errors = await osmose.fetchErrors({ item: 8120 });
     const errorId = errors[0].error_id;
     const result = await osmose.closeError(errorId);
 
@@ -88,13 +88,17 @@ describe('Update Osmose errors', async () => {
   });
 
   it('Should mark as false positive error related to an Osmose item', async () => {
+    const errors = await osmose.fetchErrors({ item: 8120 });
     const errorId = errors[1].error_id;
     const result = await osmose.falseError(errorId);
 
     expect(result).toBeDefined();
     expect(result).toBe(true);
-    defaultOptions.endpoint,
-      expect(falseErrorRequest).toBeCalledWith(language, errorId);
+    expect(falseErrorRequest).toBeCalledWith(
+      defaultOptions.endpoint,
+      language,
+      errorId
+    );
   });
 });
 
