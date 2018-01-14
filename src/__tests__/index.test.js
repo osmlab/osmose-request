@@ -72,7 +72,7 @@ describe('Get Osmose errors', () => {
 describe('Update Osmose errors', async () => {
   const language = 'fr';
   const osmose = new OsmoseRequest({ language });
-  let errors = await osmose.fetchErrors({ item: 8120 });
+  const errors = await osmose.fetchErrors({ item: 8120 });
 
   it('Should close error related to an Osmose item', async () => {
     const errorId = errors[0].error_id;

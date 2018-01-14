@@ -37,6 +37,14 @@ export const fetchErrorRequest = jest.fn().mockImplementation(() => ({
   error_id: 14412894302
 }));
 
+export const closeErrorRequest = jest.fn().mockImplementation(() => {
+  return '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>Error: 200 OK</title></head><body><h1>Error: 200 OK</h1><p>Sorry, the requested URL <tt>&#039;http://osmose.openstreetmap.fr/fr/api/0.2/error/15175986806/done&#039;</tt>caused an error:</p><pre>OK</pre></body></html>';
+});
+
+export const falseErrorRequest = jest.fn().mockImplementation(() => {
+  return '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"><html><head><title>Error: 200 OK</title></head><body><h1>Error: 200 OK</h1><p>Sorry, the requested URL <tt>&#039;http://osmose.openstreetmap.fr/fr/api/0.2/error/15175986806/done&#039;</tt>caused an error:</p><pre>OK</pre></body></html>';
+});
+
 export const fetchSupportedCountriesRequest = jest
   .fn()
   .mockImplementation(() => ({
