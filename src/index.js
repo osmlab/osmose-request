@@ -3,6 +3,8 @@ import defaultOptions from './defaultOptions.json';
 import {
   fetchErrorsRequest,
   fetchErrorRequest,
+  closeErrorRequest,
+  falseErrorRequest,
   fetchSupportedCountriesRequest,
   fetchItemCategoriesRequest,
   fetchItemsRequest
@@ -92,6 +94,32 @@ export default class OsmoseRequest {
    */
   async fetchError(errorId) {
     return await fetchErrorRequest(
+      this._options.endpoint,
+      this._options.language,
+      errorId
+    );
+  }
+
+  /**
+   * Mark the specific error as solved
+   * @param {String} errorId The error ID
+   * @return {Object}
+   */
+  async closeError(errorId) {
+    return await closeErrorRequest(
+      this._options.endpoint,
+      this._options.language,
+      errorId
+    );
+  }
+
+  /**
+   * Mark the specific error as false positive
+   * @param {String} errorId The error ID
+   * @return {Object}
+   */
+  async falseError(errorId) {
+    return await falseErrorRequest(
       this._options.endpoint,
       this._options.language,
       errorId

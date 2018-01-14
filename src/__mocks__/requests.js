@@ -37,6 +37,14 @@ export const fetchErrorRequest = jest.fn().mockImplementation(() => ({
   error_id: 14412894302
 }));
 
+export const closeErrorRequest = jest.fn().mockImplementation(() => {
+  return true;
+});
+
+export const falseErrorRequest = jest.fn().mockImplementation(() => {
+  return true;
+});
+
 export const fetchSupportedCountriesRequest = jest
   .fn()
   .mockImplementation(() => ({

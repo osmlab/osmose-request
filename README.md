@@ -73,6 +73,28 @@ osmose.fetchError(123456)
 ```
 
 
+#### closeError
+
+Closes the given error on Osmose server.
+
+``` javascript
+// With 123456 as an error ID
+osmose.closeError(123456)
+  .then(ok => console.log(ok)); // true if taken into account
+```
+
+
+#### falseError
+
+Sets this error as a false positive on Osmose server.
+
+``` javascript
+// With 123456 as an error ID
+osmose.falseError(123456)
+  .then(ok => console.log(ok)); // true if taken into account
+```
+
+
 #### fetchSupportedCountries
 
 Returns the list of the supported countries in the Osmose instance.
