@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.0
+
+* Transfer the repository to the osm-code organization.
+
 ## 1.1.1
 
 * Forgot to build in the previous version.
