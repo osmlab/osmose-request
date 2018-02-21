@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/GuillaumeAmat/osmose-request.svg)](https://github.com/GuillaumeAmat/osmose-request/releases)
-[![Build Status](https://api.travis-ci.org/GuillaumeAmat/osmose-request.svg?branch=develop)](http://travis-ci.org/GuillaumeAmat/osmose-request)
-[![Coverage Status](https://coveralls.io/repos/github/GuillaumeAmat/osmose-request/badge.svg?branch=develop)](https://coveralls.io/github/GuillaumeAmat/osmose-request?branch=develop)
+[![GitHub release](https://img.shields.io/github/release/osm-code/osmose-request.svg)](https://github.com/osm-code/osmose-request/releases)
+[![Build Status](https://api.travis-ci.org/osm-code/osmose-request.svg?branch=develop)](http://travis-ci.org/osm-code/osmose-request)
+[![Coverage Status](https://coveralls.io/repos/github/osm-code/osmose-request/badge.svg?branch=develop)](https://coveralls.io/github/osm-code/osmose-request?branch=develop)
 
 # Osmose Request
 
@@ -11,7 +11,7 @@ Request the [Osmose](http://wiki.openstreetmap.org/wiki/Osmose) API from Javascr
 ## Installation
 
 ```
-$ npm install osmose-request
+$ npm install @osm-code/osmose-request
 ```
 
 
@@ -137,7 +137,7 @@ osmose.fetchItems('fr')
 ## Contribute
 
 ```
-$ git clone git@github.com:GuillaumeAmat/osmose-request.git
+$ git clone git@github.com:osm-code/osmose-request.git
 $ cd osmose-request
 $ npm install
 $ npm run watch
