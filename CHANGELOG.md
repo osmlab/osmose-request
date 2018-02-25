@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.0
+
+* Transfer the repository to the osmlab organization.
+
 ## 1.2.0
 
 * Transfer the repository to the osm-code organization.
