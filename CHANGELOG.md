@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.3.1
+
+* Add an explanation about the API options in the README.
+
 ## 1.3.0
 
 * Transfer the repository to the osmlab organization.

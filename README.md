@@ -26,6 +26,22 @@ osmose.fetchErrors({ item: 8120 })
   .then(result => console.log(result));
 ```
 
+In the previous example, the `item` option is one of the many Osmose options available and listed here:
+https://wiki.openstreetmap.org/wiki/Osmose/api/0.2#Settings
+
+For now, the value of the options have the same shape as the real API options. It will be more JS friendly in the future.
+
+So for example, if you want to limit the returned results to a specific location, you can add the `bbox` option like that:
+
+``` javascript
+import OsmoseRequest from 'osmose-request';
+
+const osmose = new OsmoseRequest();
+
+osmose.fetchErrors({ item: 8120, bbox: '1.123,-0.124,2.767,0.243' })
+  .then(result => console.log(result));
+```
+
 
 ### Options
 
