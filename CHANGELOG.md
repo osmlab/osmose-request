@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 1.4.0
+
+* Export the default es6 module to be properly required.
+* Add an API documentation.
+
 ## 1.3.1
 
 * Add an explanation about the API options in the README.
