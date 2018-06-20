@@ -17,6 +17,9 @@
     "api"
   ],
   "main": "dist/OsmoseRequest.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "watch": "webpack -w --progress",
     "build": "cross-env NODE_ENV=production webpack --progress",
