@@ -27,7 +27,7 @@ export default class OsmoseRequest {
 
   /**
    * Return the language to use for the Accept-language header of the requests
-   * @return {String} Language code (eg: fr, en, ru)
+   * @return {string} Language code (eg: fr, en, ru)
    */
   get language() {
     return this._options.language;
@@ -35,7 +35,7 @@ export default class OsmoseRequest {
 
   /**
    * Return the API endpoint to use for the requests
-   * @return {String} URL of the API endpoint
+   * @return {string} URL of the API endpoint
    */
   get endpoint() {
     return this._options.endpoint;
@@ -89,7 +89,7 @@ export default class OsmoseRequest {
 
   /**
    * Return all the informations about a specific error
-   * @param {String} errorId The error ID
+   * @param {string} errorId The error ID
    * @return {Object}
    */
   async fetchError(errorId) {
@@ -102,7 +102,7 @@ export default class OsmoseRequest {
 
   /**
    * Mark the specific error as solved
-   * @param {String} errorId The error ID
+   * @param {string} errorId The error ID
    * @return {Object}
    */
   async closeError(errorId) {
@@ -115,7 +115,7 @@ export default class OsmoseRequest {
 
   /**
    * Mark the specific error as false positive
-   * @param {String} errorId The error ID
+   * @param {string} errorId The error ID
    * @return {Object}
    */
   async falseError(errorId) {
@@ -164,7 +164,7 @@ export default class OsmoseRequest {
   /**
    * Return the list of the items configured in the Osmose instance and their translated name.
    * It's possible to filter the returned translations to one language.
-   * @param {String} [isoCountryCode] Eg: fr, en, ru
+   * @param {string} [isoCountryCode] Eg: fr, en, ru
    * @return {Array}
    */
   async fetchItems(isoCountryCode) {

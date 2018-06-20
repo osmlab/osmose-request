@@ -3,8 +3,8 @@ import defaultOptions from './defaultOptions.json';
 import { buildQueryString } from './helpers';
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
  * @param  {Object} params
  * @return {Object}
  */
@@ -23,9 +23,9 @@ export const fetchErrorsRequest = (endpoint, language, params) => {
 };
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
- * @param  {String} errorId The ID of the error to fetch
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
+ * @param  {string} errorId The ID of the error to fetch
  * @return {Object}
  */
 export const fetchErrorRequest = (endpoint, language, errorId) => {
@@ -43,9 +43,9 @@ export const fetchErrorRequest = (endpoint, language, errorId) => {
 };
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
- * @param  {String} errorId The ID of the error to mark as closed
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
+ * @param  {string} errorId The ID of the error to mark as closed
  * @return {Object}
  */
 export const closeErrorRequest = (endpoint, language, errorId) => {
@@ -61,9 +61,9 @@ export const closeErrorRequest = (endpoint, language, errorId) => {
 };
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
- * @param  {String} errorId The ID of the error to mark as false positive
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
+ * @param  {string} errorId The ID of the error to mark as false positive
  * @return {Object}
  */
 export const falseErrorRequest = (endpoint, language, errorId) => {
@@ -79,8 +79,8 @@ export const falseErrorRequest = (endpoint, language, errorId) => {
 };
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
  * @return {Object}
  */
 export const fetchSupportedCountriesRequest = (endpoint, language) => {
@@ -98,8 +98,8 @@ export const fetchSupportedCountriesRequest = (endpoint, language) => {
 };
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
  * @return {Object}
  */
 export const fetchItemCategoriesRequest = (endpoint, language) => {
@@ -117,8 +117,8 @@ export const fetchItemCategoriesRequest = (endpoint, language) => {
 };
 
 /**
- * @param  {String} endpoint The API endpoint
- * @param  {String} language Accept-Language HTTP header value
+ * @param  {string} endpoint The API endpoint
+ * @param  {string} language Accept-Language HTTP header value
  * @return {Object}
  */
 export const fetchItemsRequest = (endpoint, language) => {

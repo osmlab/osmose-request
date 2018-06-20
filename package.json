@@ -29,7 +29,11 @@
     "test-ci": "npm test -- --ci",
     "test-coverage": "npm run test-ci -- --coverage",
     "test-prettier": "prettier --single-quote --list-different 'src/**/*.{js,json}'",
-    "lint": "eslint 'src/**/*.{js,json}'"
+    "lint": "eslint 'src/**/*.{js,json}'",
+    "doc": "npm run doc:lint && documentation build ./src/* -f md > API.md",
+    "doc:lint": "documentation lint ./src/*",
+    "preversion": "npm run test-ci && npm run build",
+    "postversion": "git push && git push --tags"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -64,6 +68,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "coveralls": "^3.0.0",
     "cross-env": "^5.1.1",
+    "documentation": "^8.0.0",
     "eslint": "^4.8.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-import": "^2.7.0",
