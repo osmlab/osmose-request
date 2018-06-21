@@ -1,7 +1,7 @@
 {
   "name": "osmose-request",
   "description": "Request the Osmose API from Javascript, with promises :)",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "homepage": "https://github.com/osmlab/osmose-request/",
   "repository": "https://github.com/osmlab/osmose-request/",
   "bugs": "https://github.com/osmlab/osmose-request/issues",
