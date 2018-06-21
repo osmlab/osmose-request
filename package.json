@@ -43,6 +43,10 @@
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/requests.js",
       "<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov"
     ]
   },
   "prettier": {
