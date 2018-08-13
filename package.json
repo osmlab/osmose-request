@@ -17,8 +17,10 @@
     "api"
   ],
   "main": "dist/OsmoseRequest.js",
+  "types": "index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "scripts": {
     "watch": "webpack -w --progress",
